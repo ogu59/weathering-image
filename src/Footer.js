@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const githubUrl = "https://github.com/ogu59/weathering-image";
+const githubUrl = "https://github.com/juo6442/weathering-image";
 
 function Footer(props) {
   return (
