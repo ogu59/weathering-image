@@ -1,6 +1,7 @@
 import React from "react";
 import * as degrader from "./ImageDegrader";
 import "./style.css";
+import { guessEraByDegrade } from "./ImageDegrader";
 
 const maxImageSize = 1500 * 1500;
 
@@ -122,6 +123,14 @@ class EditorSection extends React.Component {
           value={this.state.degrade}
           onChange={(event) => this.handleQualityChange(event)}
         />
+            {(() => {
+  const eraInfo = guessEraByDegrade(this.state.degrade);
+  return (
+    <p style={{ marginTop: "0.5em", color: "rgb(100,100,100)", fontSize: "0.9em" }}>
+      📸 {eraInfo.years} ({eraInfo.label})
+    </p>
+  );
+})()}
       </section>
     );
   }
